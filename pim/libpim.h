@@ -37,12 +37,13 @@ typedef struct im_ctrl{
 	pthread_t pid;
 	int wake[2];
 	pthread_mutex_t lock;
+	int stop;
 }im_ctrl_t;
 
 im_ctrl_t* im_create(void);
 
 
 void im_destroy(im_ctrl_t* imc);
-
+int im_push_msg(im_ctrl_t* imc,unsigned char* msg,int len);
 
 #endif   //endif of 
