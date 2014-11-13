@@ -41,5 +41,7 @@ clean:
 		rm -f $(SRC)/*.o
 		rm -f $(SRC)/*~
 		rm -f $(LIB)
+		make clean -C myTest-Server
+		make clean -C myTest-Client
 		cd test && $(MAKE) clean
 
